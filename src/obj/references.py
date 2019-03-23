@@ -36,7 +36,8 @@ class References():
 
         s_x = defs.S.dot(defs.w_H_tb.dot(e_1 + p))
         s_y = defs.S.dot(defs.w_H_tb.dot(e_2 + p))
+        o = defs.S.dot(defs.w_H_tb.dot(p))
 
-        axes_tuple = (int(p[0]), int(p[1]), int(s_x[0]), int(s_x[1]),
-                      int(p[0]), int(p[1]), int(s_y[0]), int(s_y[1]))
+        axes_tuple = (int(o[0]), int(o[1]), int(s_x[0]+1), int(s_x[1]+1),
+                      int(o[0]), int(o[1]), int(s_y[0]+1), int(s_y[1]+1))
         return axes_tuple

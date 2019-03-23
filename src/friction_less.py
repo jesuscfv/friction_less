@@ -1,6 +1,5 @@
 import pyglet
 import math
-import numpy as np
 from obj import pendulum, definitions as defs, references as refs
 
 # Setup a window
@@ -23,6 +22,9 @@ references = refs.References(0.1)
 # Add the points to the main_batch
 grid_points = main_batch.add(int(len(references.grid_points)/2), pyglet.gl.GL_POINTS, None,
                              ('v2i', references.grid_points))
+axes = main_batch.add(4, pyglet.gl.GL_LINES, None,
+                      ('v2i', references.axes_points),
+                      ('c3B', (255, 0, 0, 255, 0, 0, 0, 255, 0, 0, 255, 0)))
 
 # Objects to update
 screen_objects = [pen]
